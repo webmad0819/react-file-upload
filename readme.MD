@@ -1,4 +1,4 @@
-do an `npm install` on both folders
+using node v10.15.3 do an `npm install` on both folders
 
 add an .env file in the file-upload-cdn folder with your credentials
 
