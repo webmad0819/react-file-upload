@@ -28,6 +28,7 @@ class Home extends Component {
   }
 
   handleChange(e) {
+    debugger
     this.setState({
       ...this.state,
       file: e.target.files[0]
@@ -70,7 +71,9 @@ class Home extends Component {
   handleSubmit(e) {
     e.preventDefault()
     // Reuse of the method "addPicture" from the file '../api'
+    debugger
     api.addPicture(this.state.file).then(photoData => {
+      debugger
       let newPhotos = [...this.state.photos]
       newPhotos.push(photoData)
 
@@ -87,10 +90,10 @@ class Home extends Component {
 
         {(this.state.showTickOk) ? <p>updated ok</p> : ""}
 
-        <form onSubmit={(e)=>this.handleSubmitUpdateUsername(e)}>
+        {/* <form onSubmit={(e)=>this.handleSubmitUpdateUsername(e)}>
           <input type="text" value={this.state.username} onChange={(e)=>this.handleChangeUsername(e)} />
           <button type="submit">Update user</button>
-        </form>
+        </form> */}
 
         <form onSubmit={(e)=>this.handleSubmit(e)}>
           <input type="file" onChange={(e)=>this.handleChange(e)} /> <br/>
