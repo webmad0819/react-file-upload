@@ -45,7 +45,7 @@ router.post('/api/users/first-user/pictures', uploadCloud.single('photo'), (req,
   //actual write in mongo using mongoose
   newPhoto.save()
   .then(photo => {
-    res.json({url: req.file.url, photo: photo});
+    res.json({url: req.file, photo: photo});
   })
   .catch(error => {
     console.log(error);

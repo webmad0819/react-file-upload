@@ -28,7 +28,9 @@ class Home extends Component {
   }
 
   handleChange(e) {
-    debugger
+    console.log("archivos seleccionado")
+    console.log(e.target.files[0])
+
     this.setState({
       ...this.state,
       file: e.target.files[0]
@@ -71,9 +73,7 @@ class Home extends Component {
   handleSubmit(e) {
     e.preventDefault()
     // Reuse of the method "addPicture" from the file '../api'
-    debugger
     api.addPicture(this.state.file).then(photoData => {
-      debugger
       let newPhotos = [...this.state.photos]
       newPhotos.push(photoData)
 
